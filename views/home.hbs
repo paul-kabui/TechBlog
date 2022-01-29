@@ -1,0 +1,18 @@
+<div style="margin-top: 5rem;">
+    <div class="container-md">
+        <h1 class="fw-bold">Welcome to Tech Blog</h1>
+        {{!-- anchor to be in for loop, hred should be passes like comment:/id --}}
+        {{#each blogs as |data|}}
+        <a class="text-decoration-none text-dark" href="/{{data.dataValues.id}}">
+            <div class="row border rounded-3 bg-light p-3 m-3">
+                <div class="col-md-6">
+                    <h4>{{data.dataValues.title}}</h4>
+                </div>
+                <div class="col-md-6">
+                    <i>Date:{{data.dataValues.createdAt}}</i>
+                </div>
+            </div>
+        </a>
+        {{/each}}
+    </div>
+</div>

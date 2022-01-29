@@ -1,0 +1,19 @@
+<div style="margin-top: 5rem;" class="container-md">
+        <div class="d-flex flex-column p-3">
+            {{#each blog as |data|}}
+            <form method="post" class="justify-content-center border p-4 bg-light shadow" action="/update/{{data.dataValues.id}}">
+                <label class="h4">Title</label><br>
+                <textarea class="rounded-3" rows="1" name="title" cols="40">{{data.dataValues.title}}</textarea><br>
+                <label class="h4">Blog content</label><br>
+                <textarea class="rounded-3" name="content" rows="10" cols="70">{{data.dataValues.content}}</textarea><br>
+                <div class="btn-group mt-4">
+                    <a href="/del_blog/{{data.dataValues.id}}" class="btn btn-sm btn-outline-danger px-5">Delete</a>
+                    <button type="submit" class="btn btn-sm btn-outline-dark px-4">Update</button>
+                    <a href="/dashboard" class="btn btn-sm btn-outline-dark px-3">Back</a>
+                </div>
+            </form>
+            {{/each}}
+        </div>
+        
+    </div>
+</div>
